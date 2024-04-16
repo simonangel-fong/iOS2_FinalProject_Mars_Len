@@ -10,11 +10,11 @@ import SceneKit
 
 struct LoginView: View {
     
-    @StateObject var user = UserViewModel()
+    @StateObject var user = UserModel()
+    @StateObject var profile = ProfileObj()
     @State private var signUpViewPresented = false
     
     var body: some View {
-        
         VStack {
             Text("Astronaut login".uppercased())
                 .font(.title2)
@@ -28,8 +28,8 @@ struct LoginView: View {
                 ])
             .background(Color.clear)
             .frame(
-                width: ScreenDimensions.width * 0.9,
-                height: ScreenDimensions.width * 0.9)
+                width: ScreenDim.width * 0.9,
+                height: ScreenDim.width * 0.9)
             
             // MARK: - Email textfield
             let emailInputField = HStack {
@@ -50,14 +50,14 @@ struct LoginView: View {
                 emailTextField
                     .keyboardType(.emailAddress)
                     .autocapitalization(UITextAutocapitalizationType.none)
-                }
-                .padding(0.02 * ScreenDimensions.height)
+            }
+                .padding(0.02 * ScreenDim.height)
             
             emailInputField.background(
                 RoundedRectangle(cornerRadius:10)
                     .fill(Color(.systemGray5))
             )
-            .frame(width: ScreenDimensions.width * 0.8)
+            .frame(width: ScreenDim.width * 0.8)
             
             // MARK: -password textfield
             let passwordInputField = HStack {
@@ -68,16 +68,16 @@ struct LoginView: View {
                     .opacity(0.5)
                 SecureField("Password", text: $user.password)
             }
-                .padding(0.02 * ScreenDimensions.height)
+                .padding(0.02 * ScreenDim.height)
             
             passwordInputField
                 .background(
                     RoundedRectangle(cornerRadius:10)
                         .fill(Color(.systemGray5))
                 )
-                .frame(width: ScreenDimensions.width * 0.8)
+                .frame(width: ScreenDim.width * 0.8)
             
-            Spacer().frame(idealHeight: 0.05 * ScreenDimensions.height).fixedSize()
+            Spacer().frame(idealHeight: 0.05 * ScreenDim.height).fixedSize()
             
             // MARK: - login button
             let loginButton = Button(action: user.login) {
@@ -86,24 +86,26 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .font(.title2).bold()
             }
-                .padding(0.02 * ScreenDimensions.height)
+                .padding(0.02 * ScreenDim.height)
                 .background(
                     Capsule().fill(Color.primaryRed))
             
             loginButton.buttonStyle(BorderlessButtonStyle())
             
-            Spacer().frame(idealHeight: 0.05 * ScreenDimensions.height).fixedSize()
+            Spacer().frame(idealHeight: 0.05 * ScreenDim.height).fixedSize()
             
             // MARK: - prompt sign up
             HStack {
                 Text("Don't have an account?")
-                let signUpButton = Button(action: {
-                    signUpViewPresented = true
-                }) {
-                    Text("Sign Up".uppercased()).bold()
-                }
+                let signUpButton = Button(
+                    action: {signUpViewPresented = true}){
+                        Text("Sign Up".uppercased()).bold()
+                    }
                     .sheet(isPresented: $signUpViewPresented) {
-                        SignUpView(user: user, isPresented: $signUpViewPresented)
+                        SignUpView(
+                            user: user,
+                            profile: profile,
+                            isPresented: $signUpViewPresented)
                     }
                 signUpButton.buttonStyle(BorderlessButtonStyle())
             }
@@ -115,6 +117,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(user: user)
+        LoginView()
+            .environmentObject(ProfileModel())
     }
 }

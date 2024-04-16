@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F41377D82BCE81EF009DE7B4 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41377D72BCE81EF009DE7B4 /* NicknameView.swift */; };
 		F4180C4B2BCE0AC60005D322 /* Mars.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F4180C4A2BCE0AC60005D322 /* Mars.usdz */; };
 		F4180C4D2BCE0DE50005D322 /* EarthClouds.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F4180C4C2BCE0DE50005D322 /* EarthClouds.usdz */; };
 		F4180C4F2BCE0F980005D322 /* Earth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F4180C4E2BCE0F970005D322 /* Earth.usdz */; };
@@ -26,12 +27,20 @@
 		F4AAAC532BCDE0D500DD788A /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F4AAAC522BCDE0D500DD788A /* FirebaseFirestoreCombine-Community */; };
 		F4AAAC552BCDE0D500DD788A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F4AAAC542BCDE0D500DD788A /* FirebaseStorage */; };
 		F4AAAC572BCDE0D500DD788A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F4AAAC562BCDE0D500DD788A /* FirebaseStorageCombine-Community */; };
-		F4AAAC5D2BCDE3AF00DD788A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC5C2BCDE3AF00DD788A /* UserViewModel.swift */; };
-		F4AAAC5F2BCDE47200DD788A /* ScreenDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC5E2BCDE47200DD788A /* ScreenDimensions.swift */; };
+		F4AAAC5D2BCDE3AF00DD788A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC5C2BCDE3AF00DD788A /* UserModel.swift */; };
+		F4AAAC5F2BCDE47200DD788A /* ScreenDim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC5E2BCDE47200DD788A /* ScreenDim.swift */; };
 		F4AAAC632BCDE65C00DD788A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC622BCDE65C00DD788A /* SignUpView.swift */; };
+		F4C520302BCE14DA0051CA5A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5202F2BCE14DA0051CA5A /* ProfileView.swift */; };
+		F4C520322BCE180D0051CA5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C520312BCE180D0051CA5A /* ContentView.swift */; };
+		F4C520342BCE216B0051CA5A /* ProfileImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C520332BCE216B0051CA5A /* ProfileImg.swift */; };
+		F4C520362BCE26250051CA5A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C520352BCE26250051CA5A /* ProfileModel.swift */; };
+		F4C520382BCE272C0051CA5A /* DatabaseExtends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C520372BCE272C0051CA5A /* DatabaseExtends.swift */; };
+		F4C5203A2BCE7E1C0051CA5A /* ProfileObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C520392BCE7E1C0051CA5A /* ProfileObj.swift */; };
+		F4C5203C2BCE7E6E0051CA5A /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5203B2BCE7E6E0051CA5A /* Encodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F41377D72BCE81EF009DE7B4 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
 		F4180C4A2BCE0AC60005D322 /* Mars.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Mars.usdz; sourceTree = "<group>"; };
 		F4180C4C2BCE0DE50005D322 /* EarthClouds.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = EarthClouds.usdz; sourceTree = "<group>"; };
 		F4180C4E2BCE0F970005D322 /* Earth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Earth.usdz; sourceTree = "<group>"; };
@@ -43,9 +52,16 @@
 		F4AAAC3E2BCDDC4700DD788A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F4AAAC412BCDDCDC00DD788A /* ColorExtends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtends.swift; sourceTree = "<group>"; };
 		F4AAAC432BCDE03A00DD788A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F4AAAC5C2BCDE3AF00DD788A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		F4AAAC5E2BCDE47200DD788A /* ScreenDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDimensions.swift; sourceTree = "<group>"; };
+		F4AAAC5C2BCDE3AF00DD788A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F4AAAC5E2BCDE47200DD788A /* ScreenDim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDim.swift; sourceTree = "<group>"; };
 		F4AAAC622BCDE65C00DD788A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F4C5202F2BCE14DA0051CA5A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F4C520312BCE180D0051CA5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F4C520332BCE216B0051CA5A /* ProfileImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImg.swift; sourceTree = "<group>"; };
+		F4C520352BCE26250051CA5A /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		F4C520372BCE272C0051CA5A /* DatabaseExtends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseExtends.swift; sourceTree = "<group>"; };
+		F4C520392BCE7E1C0051CA5A /* ProfileObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileObj.swift; sourceTree = "<group>"; };
+		F4C5203B2BCE7E6E0051CA5A /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +138,11 @@
 			children = (
 				F4AAAC2D2BCDDADF00DD788A /* MarsLenApp.swift */,
 				F4AAAC3C2BCDDC0300DD788A /* LandingView.swift */,
+				F4C520312BCE180D0051CA5A /* ContentView.swift */,
 				F4AAAC3E2BCDDC4700DD788A /* LoginView.swift */,
 				F4AAAC622BCDE65C00DD788A /* SignUpView.swift */,
+				F4C5202F2BCE14DA0051CA5A /* ProfileView.swift */,
+				F41377D72BCE81EF009DE7B4 /* NicknameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				F4AAAC412BCDDCDC00DD788A /* ColorExtends.swift */,
+				F4C520372BCE272C0051CA5A /* DatabaseExtends.swift */,
+				F4C5203B2BCE7E6E0051CA5A /* Encodable.swift */,
 			);
 			path = Extends;
 			sourceTree = "<group>";
@@ -139,6 +160,7 @@
 		F4AAAC582BCDE2EE00DD788A /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				F4C520332BCE216B0051CA5A /* ProfileImg.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -146,8 +168,10 @@
 		F4AAAC5B2BCDE39700DD788A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F4AAAC5C2BCDE3AF00DD788A /* UserViewModel.swift */,
-				F4AAAC5E2BCDE47200DD788A /* ScreenDimensions.swift */,
+				F4AAAC5C2BCDE3AF00DD788A /* UserModel.swift */,
+				F4AAAC5E2BCDE47200DD788A /* ScreenDim.swift */,
+				F4C520352BCE26250051CA5A /* ProfileModel.swift */,
+				F4C520392BCE7E1C0051CA5A /* ProfileObj.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,13 +264,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41377D82BCE81EF009DE7B4 /* NicknameView.swift in Sources */,
+				F4C520382BCE272C0051CA5A /* DatabaseExtends.swift in Sources */,
+				F4C5203C2BCE7E6E0051CA5A /* Encodable.swift in Sources */,
+				F4C520302BCE14DA0051CA5A /* ProfileView.swift in Sources */,
 				F4AAAC3D2BCDDC0300DD788A /* LandingView.swift in Sources */,
-				F4AAAC5D2BCDE3AF00DD788A /* UserViewModel.swift in Sources */,
+				F4AAAC5D2BCDE3AF00DD788A /* UserModel.swift in Sources */,
+				F4C520362BCE26250051CA5A /* ProfileModel.swift in Sources */,
 				F4AAAC422BCDDCDC00DD788A /* ColorExtends.swift in Sources */,
+				F4C5203A2BCE7E1C0051CA5A /* ProfileObj.swift in Sources */,
 				F4AAAC3F2BCDDC4700DD788A /* LoginView.swift in Sources */,
+				F4C520322BCE180D0051CA5A /* ContentView.swift in Sources */,
 				F4AAAC632BCDE65C00DD788A /* SignUpView.swift in Sources */,
 				F4AAAC2E2BCDDADF00DD788A /* MarsLenApp.swift in Sources */,
-				F4AAAC5F2BCDE47200DD788A /* ScreenDimensions.swift in Sources */,
+				F4AAAC5F2BCDE47200DD788A /* ScreenDim.swift in Sources */,
+				F4C520342BCE216B0051CA5A /* ProfileImg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

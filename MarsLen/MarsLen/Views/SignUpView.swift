@@ -9,8 +9,11 @@ import SwiftUI
 import SceneKit
 
 struct SignUpView: View {
+
+    @ObservedObject var user: UserModel
+    @ObservedObject var profileModel = ProfileModel()
+    @ObservedObject var profile: ProfileObj
     
-    @ObservedObject var user: UserViewModel
     @Binding var isPresented: Bool
     
     var body: some View {
@@ -29,9 +32,10 @@ struct SignUpView: View {
                 ])
             .background(Color.clear)
             .frame(
-                width: ScreenDimensions.width * 0.9,
-                height: ScreenDimensions.width * 0.9)
-            Spacer().frame(idealHeight: 0.1 * ScreenDimensions.height).fixedSize()
+                width: ScreenDim.width * 0.9,
+                height: ScreenDim.width * 0.9)
+            
+            Spacer().frame(idealHeight: 0.05 * ScreenDim.height).fixedSize()
             
             // MARK: - Email textfield
             let emailInputField = HStack {
@@ -53,13 +57,13 @@ struct SignUpView: View {
                     .keyboardType(.emailAddress)
                     .autocapitalization(UITextAutocapitalizationType.none)
             }
-                .padding(0.02 * ScreenDimensions.height)
+                .padding(0.02 * ScreenDim.height)
             
             emailInputField.background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.systemGray5))
             )
-            .frame(width: ScreenDimensions.width * 0.8)
+            .frame(width: ScreenDim.width * 0.8)
             
             // MARK: -password textfield
             let passwordInputField = HStack {
@@ -70,35 +74,38 @@ struct SignUpView: View {
                     .opacity(0.5)
                 SecureField("Password", text: $user.password)
             }
-                .padding(0.02 * ScreenDimensions.height)
+                .padding(0.02 * ScreenDim.height)
             
             passwordInputField.background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.systemGray5))
             )
-            .frame(width: ScreenDimensions.width * 0.8)
+            .frame(width: ScreenDim.width * 0.8)
             
-            Spacer().frame(idealHeight: 0.05 * ScreenDimensions.height).fixedSize()
+            Spacer().frame(idealHeight: 0.05 * ScreenDim.height).fixedSize()
 
             // MARK: - login button
-            let signUpButton = Button(action: user.signUp) {
-                
+            let signUpButton = Button(action: {
+                user.signUp()
+                profileModel.create()
+                user.login()
+            }) {
                 Text("Sign Up".uppercased())
                     .foregroundColor(.white)
                     .font(.title2).bold()
             }
-                .padding(0.02 * ScreenDimensions.height)
+                .padding(0.02 * ScreenDim.height)
                 .background(
                     Capsule().fill(Color.primaryRed))
             
             signUpButton.buttonStyle(BorderlessButtonStyle())
             
-            Spacer().frame(idealHeight: 0.05 * ScreenDimensions.height).fixedSize()
+            Spacer().frame(idealHeight: 0.05 * ScreenDim.height).fixedSize()
             
             HStack {
                 Text("Already have an account?")
                 let loginButton = Button(action: {
-                    isPresented = false
+                    user.isSignedIn = false
                 }) {
                     Text("Login".uppercased()).bold()
                 }
@@ -115,7 +122,10 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(user: user, isPresented: .constant(false))
-            .preferredColorScheme(.light)
+        SignUpView(
+            user: user,
+            profile: profileObj,
+            isPresented: .constant(false))
+          .preferredColorScheme(.light)
     }
 }

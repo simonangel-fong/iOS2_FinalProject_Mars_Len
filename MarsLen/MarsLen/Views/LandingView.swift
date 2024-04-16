@@ -42,7 +42,8 @@ struct LandingView: View {
                     
                     // Navigation to Mars3DView
                     NavigationLink(
-                        destination: LoginView()
+//                        destination: LoginView()
+                        destination: ContentView()
                     ) {
                         Text("Start Mars Advanture")
                             .font(.system(size: 18))

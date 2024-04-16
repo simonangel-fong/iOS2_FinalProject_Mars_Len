@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import FirebaseAuth
 
-class UserViewModel: ObservableObject {
+class UserModel: ObservableObject {
     
     //User defaults
     @AppStorage("isSignedIn") var isSignedIn = false
@@ -58,9 +58,11 @@ class UserViewModel: ObservableObject {
                 self.alertMessage = err.localizedDescription
                 self.alert.toggle()
             } else {
-                self.login()
+                print("user create")
             }
         }
+        
+        
     }
     
     func logout() {
@@ -76,4 +78,4 @@ class UserViewModel: ObservableObject {
 }
 
 ///Create this object and init
-let user = UserViewModel()
+let user = UserModel()
