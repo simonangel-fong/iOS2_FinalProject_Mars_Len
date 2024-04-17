@@ -9,7 +9,7 @@ import SwiftUI
 import SceneKit
 
 struct SignUpView: View {
-
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var user: UserModel
     @ObservedObject var profileModel = ProfileModel()
     @ObservedObject var profile: ProfileObj
@@ -106,6 +106,7 @@ struct SignUpView: View {
                 Text("Already have an account?")
                 let loginButton = Button(action: {
                     user.isSignedIn = false
+                    dismiss()
                 }) {
                     Text("Login".uppercased()).bold()
                 }

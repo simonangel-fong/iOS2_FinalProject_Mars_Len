@@ -17,7 +17,9 @@ struct MarsLenApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LandingView()
+//            LandingView()
+            ContentView()
+                .environmentObject(AppModel())
         }
     }
 }

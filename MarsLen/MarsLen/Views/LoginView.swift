@@ -16,7 +16,7 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Text("Astronaut login".uppercased())
+            Text("Welcome to MarsLen".uppercased())
                 .font(.title2)
             
             // MARK: - 3D Object

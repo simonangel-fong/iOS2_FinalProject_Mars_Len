@@ -11,13 +11,22 @@
 		F4180C4B2BCE0AC60005D322 /* Mars.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F4180C4A2BCE0AC60005D322 /* Mars.usdz */; };
 		F4180C4D2BCE0DE50005D322 /* EarthClouds.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F4180C4C2BCE0DE50005D322 /* EarthClouds.usdz */; };
 		F4180C4F2BCE0F980005D322 /* Earth.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F4180C4E2BCE0F970005D322 /* Earth.usdz */; };
+		F472FF392BD00D4A00738DB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F472FF382BD00D4900738DB2 /* GoogleService-Info.plist */; };
+		F472FF3B2BD00DAC00738DB2 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472FF3A2BD00DAC00738DB2 /* AppModel.swift */; };
+		F49886272BD0112C00C67260 /* MissionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49886262BD0112C00C67260 /* MissionListView.swift */; };
+		F49886292BD013A900C67260 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49886282BD013A900C67260 /* MissionView.swift */; };
+		F498862B2BD01F3F00C67260 /* NavigationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F498862A2BD01F3F00C67260 /* NavigationRow.swift */; };
+		F498862D2BD01F6300C67260 /* MissionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F498862C2BD01F6300C67260 /* MissionInfoView.swift */; };
+		F498862F2BD024E700C67260 /* MissionSpecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F498862E2BD024E700C67260 /* MissionSpecView.swift */; };
+		F49886312BD0257800C67260 /* MissionGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49886302BD0257800C67260 /* MissionGalleryView.swift */; };
+		F49886332BD0262300C67260 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49886322BD0262300C67260 /* ImageRow.swift */; };
+		F49886352BD0265000C67260 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49886342BD0265000C67260 /* PhotoView.swift */; };
 		F4AAAC2E2BCDDADF00DD788A /* MarsLenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC2D2BCDDADF00DD788A /* MarsLenApp.swift */; };
 		F4AAAC322BCDDAE200DD788A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AAAC312BCDDAE200DD788A /* Assets.xcassets */; };
 		F4AAAC352BCDDAE200DD788A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AAAC342BCDDAE200DD788A /* Preview Assets.xcassets */; };
 		F4AAAC3D2BCDDC0300DD788A /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC3C2BCDDC0300DD788A /* LandingView.swift */; };
 		F4AAAC3F2BCDDC4700DD788A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC3E2BCDDC4700DD788A /* LoginView.swift */; };
 		F4AAAC422BCDDCDC00DD788A /* ColorExtends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAAC412BCDDCDC00DD788A /* ColorExtends.swift */; };
-		F4AAAC442BCDE03B00DD788A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4AAAC432BCDE03A00DD788A /* GoogleService-Info.plist */; };
 		F4AAAC472BCDE0D500DD788A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4AAAC462BCDE0D500DD788A /* FirebaseAnalytics */; };
 		F4AAAC492BCDE0D500DD788A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F4AAAC482BCDE0D500DD788A /* FirebaseAuth */; };
 		F4AAAC4B2BCDE0D500DD788A /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F4AAAC4A2BCDE0D500DD788A /* FirebaseAuthCombine-Community */; };
@@ -44,6 +53,17 @@
 		F4180C4A2BCE0AC60005D322 /* Mars.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Mars.usdz; sourceTree = "<group>"; };
 		F4180C4C2BCE0DE50005D322 /* EarthClouds.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = EarthClouds.usdz; sourceTree = "<group>"; };
 		F4180C4E2BCE0F970005D322 /* Earth.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Earth.usdz; sourceTree = "<group>"; };
+		F472FF382BD00D4900738DB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F472FF3A2BD00DAC00738DB2 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		F49886262BD0112C00C67260 /* MissionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListView.swift; sourceTree = "<group>"; };
+		F49886282BD013A900C67260 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		F498862A2BD01F3F00C67260 /* NavigationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRow.swift; sourceTree = "<group>"; };
+		F498862C2BD01F6300C67260 /* MissionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInfoView.swift; sourceTree = "<group>"; };
+		F498862E2BD024E700C67260 /* MissionSpecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionSpecView.swift; sourceTree = "<group>"; };
+		F49886302BD0257800C67260 /* MissionGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionGalleryView.swift; sourceTree = "<group>"; };
+		F49886322BD0262300C67260 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		F49886342BD0265000C67260 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		F49886362BD03C1200C67260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F4AAAC2A2BCDDADF00DD788A /* MarsLen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsLen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AAAC2D2BCDDADF00DD788A /* MarsLenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsLenApp.swift; sourceTree = "<group>"; };
 		F4AAAC312BCDDAE200DD788A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,7 +71,6 @@
 		F4AAAC3C2BCDDC0300DD788A /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		F4AAAC3E2BCDDC4700DD788A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F4AAAC412BCDDCDC00DD788A /* ColorExtends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtends.swift; sourceTree = "<group>"; };
-		F4AAAC432BCDE03A00DD788A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4AAAC5C2BCDE3AF00DD788A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F4AAAC5E2BCDE47200DD788A /* ScreenDim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDim.swift; sourceTree = "<group>"; };
 		F4AAAC622BCDE65C00DD788A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -113,13 +132,14 @@
 		F4AAAC2C2BCDDADF00DD788A /* MarsLen */ = {
 			isa = PBXGroup;
 			children = (
+				F49886362BD03C1200C67260 /* Info.plist */,
+				F472FF382BD00D4900738DB2 /* GoogleService-Info.plist */,
 				F4180C492BCE0A8B0005D322 /* Objects */,
 				F4AAAC5B2BCDE39700DD788A /* Models */,
 				F4AAAC402BCDDCBE00DD788A /* Extends */,
 				F4AAAC582BCDE2EE00DD788A /* Widgets */,
 				F4AAAC3B2BCDDBCB00DD788A /* Views */,
 				F4AAAC312BCDDAE200DD788A /* Assets.xcassets */,
-				F4AAAC432BCDE03A00DD788A /* GoogleService-Info.plist */,
 				F4AAAC332BCDDAE200DD788A /* Preview Content */,
 			);
 			path = MarsLen;
@@ -137,12 +157,18 @@
 			isa = PBXGroup;
 			children = (
 				F4AAAC2D2BCDDADF00DD788A /* MarsLenApp.swift */,
-				F4AAAC3C2BCDDC0300DD788A /* LandingView.swift */,
 				F4C520312BCE180D0051CA5A /* ContentView.swift */,
+				F4AAAC3C2BCDDC0300DD788A /* LandingView.swift */,
 				F4AAAC3E2BCDDC4700DD788A /* LoginView.swift */,
 				F4AAAC622BCDE65C00DD788A /* SignUpView.swift */,
 				F4C5202F2BCE14DA0051CA5A /* ProfileView.swift */,
 				F41377D72BCE81EF009DE7B4 /* NicknameView.swift */,
+				F49886262BD0112C00C67260 /* MissionListView.swift */,
+				F49886282BD013A900C67260 /* MissionView.swift */,
+				F498862C2BD01F6300C67260 /* MissionInfoView.swift */,
+				F498862E2BD024E700C67260 /* MissionSpecView.swift */,
+				F49886302BD0257800C67260 /* MissionGalleryView.swift */,
+				F49886342BD0265000C67260 /* PhotoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				F4C520332BCE216B0051CA5A /* ProfileImg.swift */,
+				F498862A2BD01F3F00C67260 /* NavigationRow.swift */,
+				F49886322BD0262300C67260 /* ImageRow.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -172,6 +200,7 @@
 				F4AAAC5E2BCDE47200DD788A /* ScreenDim.swift */,
 				F4C520352BCE26250051CA5A /* ProfileModel.swift */,
 				F4C520392BCE7E1C0051CA5A /* ProfileObj.swift */,
+				F472FF3A2BD00DAC00738DB2 /* AppModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,10 +279,10 @@
 			files = (
 				F4180C4B2BCE0AC60005D322 /* Mars.usdz in Resources */,
 				F4AAAC352BCDDAE200DD788A /* Preview Assets.xcassets in Resources */,
-				F4AAAC442BCDE03B00DD788A /* GoogleService-Info.plist in Resources */,
 				F4AAAC322BCDDAE200DD788A /* Assets.xcassets in Resources */,
 				F4180C4F2BCE0F980005D322 /* Earth.usdz in Resources */,
 				F4180C4D2BCE0DE50005D322 /* EarthClouds.usdz in Resources */,
+				F472FF392BD00D4A00738DB2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,17 +296,26 @@
 				F41377D82BCE81EF009DE7B4 /* NicknameView.swift in Sources */,
 				F4C520382BCE272C0051CA5A /* DatabaseExtends.swift in Sources */,
 				F4C5203C2BCE7E6E0051CA5A /* Encodable.swift in Sources */,
+				F49886332BD0262300C67260 /* ImageRow.swift in Sources */,
+				F498862B2BD01F3F00C67260 /* NavigationRow.swift in Sources */,
+				F49886312BD0257800C67260 /* MissionGalleryView.swift in Sources */,
 				F4C520302BCE14DA0051CA5A /* ProfileView.swift in Sources */,
+				F498862D2BD01F6300C67260 /* MissionInfoView.swift in Sources */,
 				F4AAAC3D2BCDDC0300DD788A /* LandingView.swift in Sources */,
+				F49886292BD013A900C67260 /* MissionView.swift in Sources */,
 				F4AAAC5D2BCDE3AF00DD788A /* UserModel.swift in Sources */,
 				F4C520362BCE26250051CA5A /* ProfileModel.swift in Sources */,
 				F4AAAC422BCDDCDC00DD788A /* ColorExtends.swift in Sources */,
 				F4C5203A2BCE7E1C0051CA5A /* ProfileObj.swift in Sources */,
 				F4AAAC3F2BCDDC4700DD788A /* LoginView.swift in Sources */,
+				F49886352BD0265000C67260 /* PhotoView.swift in Sources */,
+				F498862F2BD024E700C67260 /* MissionSpecView.swift in Sources */,
 				F4C520322BCE180D0051CA5A /* ContentView.swift in Sources */,
+				F472FF3B2BD00DAC00738DB2 /* AppModel.swift in Sources */,
 				F4AAAC632BCDE65C00DD788A /* SignUpView.swift in Sources */,
 				F4AAAC2E2BCDDADF00DD788A /* MarsLenApp.swift in Sources */,
 				F4AAAC5F2BCDE47200DD788A /* ScreenDim.swift in Sources */,
+				F49886272BD0112C00C67260 /* MissionListView.swift in Sources */,
 				F4C520342BCE216B0051CA5A /* ProfileImg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +453,7 @@
 				DEVELOPMENT_TEAM = YD343X57ZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarsLen/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,6 +483,7 @@
 				DEVELOPMENT_TEAM = YD343X57ZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarsLen/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

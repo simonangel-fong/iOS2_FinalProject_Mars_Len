@@ -14,7 +14,10 @@ struct ContentView: View {
     var body: some View {
         
         if isSignedIn{
+//                        NavigationView{
             ProfileView()
+                .environmentObject(AppModel())
+//                        }.environmentObject(ProfileModel())
         }else {
             //            NavigationView{
             LoginView()
