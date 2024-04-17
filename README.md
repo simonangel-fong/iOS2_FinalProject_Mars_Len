@@ -13,22 +13,22 @@
   - Enable user to Sign up and login.
   - Google Firebase Auth
 
-- [ ] User Profile
+- [x] User Profile
 
-  - Enable user to update nickname
+  - Load email from Firebase Database
   - Firebase Database
 
-- [ ] User Image
+<!-- - [ ] User Image
 
   - Enable user to upadte their images
-  - Google Firebase Database
+  - Google Firebase Database -->
 
-- [ ] Select Mars Rovers
+- [x] Select Mars Rovers
 
   - Enable user to select Mars Rovers
   - Image Carousel
 
-- [ ] Load Image List
+- [x] Load Image List
 
   - Based on selected date, load images
 
