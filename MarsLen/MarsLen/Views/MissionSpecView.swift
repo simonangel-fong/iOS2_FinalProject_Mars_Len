@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A view to show specification
 struct MissionSpecView: View {
     
     @EnvironmentObject var model: AppModel
@@ -15,7 +16,7 @@ struct MissionSpecView: View {
         NavigationStack{
             VStack {
                   
-                // image
+                // mission image
                 Image("\(model.rover_list[model.currentIndex].name)_3")
                     .resizable()
                     .aspectRatio(contentMode: .fit)

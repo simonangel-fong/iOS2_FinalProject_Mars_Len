@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A widget to display image row.
 struct ImageRow<Destination: View>: View {
     
     @State var model = AppModel()

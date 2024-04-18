@@ -8,8 +8,11 @@
 import SwiftUI
 import SceneKit
 
+// A view to sign up
 struct SignUpView: View {
-    @Environment(\.dismiss) var dismiss
+    
+    @Environment(\.dismiss) var dismiss // pop back
+    
     @ObservedObject var user: UserModel
     @ObservedObject var profileModel = ProfileModel()
     @ObservedObject var profile: ProfileObj
@@ -86,8 +89,11 @@ struct SignUpView: View {
 
             // MARK: - login button
             let signUpButton = Button(action: {
+                print("========Call sign up")
                 user.signUp()
+                print("========Call create profile")
                 profileModel.create()
+                print("========call login")
                 user.login()
             }) {
                 Text("Sign Up".uppercased())

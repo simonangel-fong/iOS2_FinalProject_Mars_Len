@@ -14,22 +14,19 @@ struct ContentView: View {
     var body: some View {
         
         if isSignedIn{
-//                        NavigationView{
+            // when is singed in, goes to profile view
             ProfileView()
                 .environmentObject(AppModel())
-//                        }.environmentObject(ProfileModel())
         }else {
-            //            NavigationView{
+            // when is not, goes to login
             LoginView()
-            //            }.environmentObject(ProfileModel())
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(ProfileModel())
+//            .environmentObject(ProfileModel())
     }
 }

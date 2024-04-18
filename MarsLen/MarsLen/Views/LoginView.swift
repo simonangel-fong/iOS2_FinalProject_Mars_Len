@@ -8,6 +8,7 @@
 import SwiftUI
 import SceneKit
 
+// A view to login
 struct LoginView: View {
     
     @StateObject var user = UserModel()

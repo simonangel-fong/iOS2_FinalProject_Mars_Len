@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A view to display mission info
 struct MissionInfoView: View {
     
     @EnvironmentObject var model: AppModel
@@ -15,13 +16,14 @@ struct MissionInfoView: View {
         NavigationStack{
             VStack {
                 
-                // image
+                // mission image
                 Image("\(model.rover_list[model.currentIndex].name)_2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.size.width * 0.95)
                     .cornerRadius(30)
                 
+                // mission description
                 ScrollView {
                     Text("\(model.rover_list[model.currentIndex].info)")
                         .font(.system(size:20))

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A view to show the images of selected mission
 struct MissionGalleryView: View {
     
     @EnvironmentObject var model: AppModel
@@ -17,10 +18,9 @@ struct MissionGalleryView: View {
     
     var body: some View {
         NavigationStack{
-            //            Text("\(camIndex)")
             
             VStack{
-                // title
+                // mission title
                 HStack {
                     Text("\(model.rover_list[model.currentIndex].name)")
                         .font(.title)
@@ -99,7 +99,7 @@ struct MissionGalleryView: View {
                 .padding(.horizontal)
                 .padding(.top, 5)
                 
-                
+                // camera image slide carousel
                 VStack {
                     ZStack{
                         ForEach(0..<model.rover_list.count, id: \.self){index in
@@ -148,7 +148,7 @@ struct MissionGalleryView: View {
                 }
                 .padding(.vertical,30)
                 
-                
+                // show image list if get data
                 if let phList = photoList{
                     List(phList) { photo in
                         HStack {
@@ -160,15 +160,15 @@ struct MissionGalleryView: View {
                             
                         }
                     }
-                    //                    .frame( maxWidth: .infinity)
-                    //                    .edgesIgnoringSafeArea(.all)
                     .listStyle(PlainListStyle())
                 }else{
+                    // dispay a text when no image
                     Text("No data with this camera!")
                 }
                 
                 Spacer()
             }
+            // load image list when appearing
             .onAppear{
                 model.getPhotoList(camIndex: camIndex) { photoModel in
                     photoList = photoModel.photos

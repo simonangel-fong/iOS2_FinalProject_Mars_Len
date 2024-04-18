@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A wedget to display profile image
 struct ProfileImg: View {
     var imgUrl: String // Variable for image URL
     var nickname: String // Variable for nickname

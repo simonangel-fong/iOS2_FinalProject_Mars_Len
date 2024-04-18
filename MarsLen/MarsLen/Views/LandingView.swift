@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A landing screen
 struct LandingView: View {
     @State private var backgroundImageOffset: CGFloat = -200 // Initial offset to hide the image outside the screen
     

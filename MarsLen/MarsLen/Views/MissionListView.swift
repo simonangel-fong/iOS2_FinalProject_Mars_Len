@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A view display different mission
 struct MissionListView: View {
     
     @EnvironmentObject var model: AppModel

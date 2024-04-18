@@ -10,21 +10,24 @@ import Combine
 import FirebaseAuth
 import FirebaseDatabase
 
+// This is a model to implement profile on Firebase real time database
 class ProfileModel: ObservableObject{
+    
+    /// DB ref
     var ref = Database.database().reference()
-    
-    //    @Published
-    //    var value: String? = nil
-    
+        
     @Published
     var data: ProfileObj? = nil
     
     //get current user id
     private func getCurrentUserID() -> String? {
-        return Auth.auth().currentUser?.uid
+        let userID = Auth.auth().currentUser?.uid
+        print("==========Get UID: \(userID)")
+        return userID
     }
     
     
+    // get profile from firebase
     func getProfile(){
         if let userID = getCurrentUserID(){
             
@@ -38,6 +41,9 @@ class ProfileModel: ObservableObject{
                     profileObj.nickname = self.data!.nickname
                     profileObj.email = self.data!.email
                     profileObj.imgurl = self.data!.imgurl
+                    print("==========get nickname: \(profileObj.nickname)")
+                    print("==========get email: \(profileObj.email)")
+                    print("==========get imgurl: \(profileObj.imgurl)")
                 }catch{
                     print("===========can not convert to Object")
                 }
@@ -45,6 +51,7 @@ class ProfileModel: ObservableObject{
         }
     }
     
+    // A functiion to create a profile based on an authenticated user.
     func create(){
         print("=========create profile")
         if let userID = getCurrentUserID(){
@@ -60,8 +67,8 @@ class ProfileModel: ObservableObject{
         }
     }
     
-    
-    //    func readValue(){
+    // A functiion to update profile info on firebase.
+    //    func update(){
     //        if let userID = getCurrentUserID(){
     //            let profileRef = ref.child("profile")
     //            let userRef = profileRef.child("\(userID)")
@@ -75,6 +82,20 @@ class ProfileModel: ObservableObject{
 }
 
 
+// a class to decode firebase data 
+class ProfileObj: Encodable, Decodable, ObservableObject{
+    
+    var email = ""
+    var nickname = ""
+    var imgurl = ""
+    
+//    init(){}
+    
+    init(email: String = "", nickname: String = "", imgurl: String = "") {
+        self.email = email
+        self.nickname = nickname
+        self.imgurl = imgurl
+    }
+}
 
-
-
+let profileObj = ProfileObj(email:"", nickname: "", imgurl: "")

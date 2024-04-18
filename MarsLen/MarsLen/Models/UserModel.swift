@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import FirebaseAuth
 
+
+// This is a model to implement authentication
 class UserModel: ObservableObject {
     
     //User defaults
@@ -20,17 +22,19 @@ class UserModel: ObservableObject {
     @Published var alert = false
     @Published var alertMessage = ""
     
+    // Function to show alert message
     private func showAlertMessage(message: String)
     {
         alertMessage = message
         alert.toggle() //show the alert with a message
     }
     
+    // Function to login with Firebase
     func login() {
         
         if email.isEmpty || password.isEmpty {
+            print("email or pwd empty")
             showAlertMessage(message: "Neither email nor password can be empty")
-            
             return
         }
         
@@ -39,15 +43,19 @@ class UserModel: ObservableObject {
             if let err = err {
                 self.alertMessage = err.localizedDescription
                 self.alert.toggle()
+                print("============Sign in fails: \(self.alertMessage)")
             } else {
                 self.isSignedIn = true
+                print("============Signed in")
             }
         }
     }
     
+    // Function to signup with Firebase
     func signUp() {
         
         if email.isEmpty || password.isEmpty {
+            print("email or pwd empty")
             showAlertMessage(message: "Neither email nor password can be empty.")
             return
         }
@@ -57,25 +65,25 @@ class UserModel: ObservableObject {
             if let err = err {
                 self.alertMessage = err.localizedDescription
                 self.alert.toggle()
+                print("============Sign up fail: \(self.alertMessage)")
             } else {
-                print("user create")
+                print("============Signed up")
             }
         }
-        
-        
     }
     
+    // Function to log out Firebase
     func logout() {
         do {
             try Auth.auth().signOut()
             isSignedIn = false
             email = ""
             password = ""
+            print("========Logout")
         } catch {
             print("Error signing out")
         }
     }
 }
 
-///Create this object and init
-let user = UserModel()
+let user = UserModel() // instance

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A view of each mission
 struct MissionView: View {
     
     @EnvironmentObject var model: AppModel
@@ -23,7 +24,7 @@ struct MissionView: View {
                     .frame(width: UIScreen.main.bounds.size.width * 0.95)
                     .cornerRadius(25)
                 
-                //
+                // detail info list
                 List{
                     NavigationRow(
                         title: "Mission Information",

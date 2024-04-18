@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A widget for naviation row.
 struct NavigationRow<Destination: View>: View {
     var title: String
     var destView: Destination

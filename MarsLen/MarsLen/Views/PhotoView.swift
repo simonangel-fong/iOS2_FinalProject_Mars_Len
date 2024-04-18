@@ -7,16 +7,17 @@
 
 import SwiftUI
 
+// A view to display image
 struct PhotoView: View {
     
     @EnvironmentObject var model: AppModel
     @State var photoData:photo
     @State private var downloadedImage: UIImage?
     
-    
     var body: some View {
         NavigationStack{
             VStack{
+                // show image if get image data
                 if let image = downloadedImage {
                     Image(uiImage: image)
                         .resizable()
@@ -24,6 +25,7 @@ struct PhotoView: View {
                         .frame(width: ScreenDim.width)
                         .padding()
                 } else {
+                    // otherwise, show default
                     Image(systemName: "photo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -42,7 +44,7 @@ struct PhotoView: View {
                     
                 }
                 
-                // spec list
+                // image details
                 List {
                     Section(header: Text("Earth Date")) {
                         Text(photoData.earth_date)

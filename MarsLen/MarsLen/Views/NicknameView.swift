@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A view to update nickname
 struct NicknameView: View {
     
     @ObservedObject var profileModel = ProfileModel()

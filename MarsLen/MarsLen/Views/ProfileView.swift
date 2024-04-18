@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// A view of profile view
 struct ProfileView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var user = UserModel()
@@ -19,7 +20,8 @@ struct ProfileView: View {
                 ProfileImg(
                     imgUrl: profile.imgurl,
                     nickname: profile.nickname)
-                
+            
+//                // list of profile configuration views
 //                List {
 //                    NavigationLink(destination: NicknameView()) {
 //                        HStack {
@@ -55,6 +57,7 @@ struct ProfileView: View {
                 .padding()
                 
             }
+            // Get profile data when appearing
             .onAppear {
                 profileModel.getProfile()
                 //            profileModel.create()
@@ -75,12 +78,7 @@ struct ProfileView: View {
     }
 }
 
-struct UploadImageView: View {
-    var body: some View {
-        Text("Upload Image View")
-            .navigationBarTitle("Update Image")
-    }
-}
+
 
 struct ProfileView_Previews: PreviewProvider {
     //    static var exampleProfile = ProfileObj(
