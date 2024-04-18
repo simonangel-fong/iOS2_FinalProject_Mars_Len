@@ -10,48 +10,51 @@ import SwiftUI
 struct PhotoView: View {
     
     @EnvironmentObject var model: AppModel
+    @State var photoData:photo
+    @State private var downloadedImage: UIImage?
+    
     
     var body: some View {
         NavigationStack{
-            Text("\(model.camIndex)")
             VStack{
-                // title
-                HStack {
-                    Text("Mission Photo")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.primaryDark.opacity(0.7))
-                        .padding(.leading)
-                        .padding(.top)
-                    Spacer(minLength: 0)
+                if let image = downloadedImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: ScreenDim.width)
+                        .padding()
+                } else {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: ScreenDim.width)
+                        .padding()
+                        .onAppear {
+                            
+                            print("Image Url:\(photoData.img_src)")
+                            
+                            /// call function download image data
+                            model.loadImageData(from: photoData.img_src) { img in
+                                downloadedImage = img       // update img
+                                print(downloadedImage)
+                            }
+                        }
+                    
                 }
-                .padding(.bottom,20)
-                
-                // image
-                Image("sample01")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.size.width)
-                    .cornerRadius(25)
                 
                 // spec list
                 List {
                     Section(header: Text("Earth Date")) {
-                        Text("2010-01-01")
+                        Text(photoData.earth_date)
                     }
                     
-                    Section(header: Text("Spacecraft")) {
-                        Text("Mars Exploration Rover 2 (MER2)")
+                    Section(header: Text("Sol Date")) {
+                        Text("\(photoData.sol)")
                     }
                     
-                    Section(header: Text("Launch Date and Time")) {
-                        Text("June 10, 2003 / 10:58:47 PDT")
+                    Section(header: Text("Camera")) {
+                        Text("\(photoData.camera.full_name)")
                     }
-                    
-                    Section(header: Text("Launch Site")) {
-                        Text("Cape Canaveral, Florida / SLC-17A")
-                    }
-                    
                 }
                 .listStyle(PlainListStyle())
                 .padding(.horizontal, 20)
@@ -59,13 +62,20 @@ struct PhotoView: View {
                     
                 )
             }
+            .navigationBarTitle("Mission Photo", displayMode: .inline)
         }
     }
 }
 
 struct PhotoView_PreviewView:PreviewProvider {
     static var previews: some View{
-        PhotoView()
+        let phObj = photo(
+        sol: 100,
+        img_src: "http://mars.nasa.gov/mer/gallery/all/2/f/001/2F126468064EDN0000P1001R0M1-BR.JPG",
+        earth_date: "2010-10-10",
+        camera: camera(name: "FHAZ", full_name: "Front Camera"))
+        
+        PhotoView(photoData:phObj)
             .environmentObject(AppModel())
     }
 }

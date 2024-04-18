@@ -14,34 +14,67 @@ struct NicknameView: View {
     
     var body: some View {
         NavigationView{
-            // MARK: - nickname textfield
-            let emailInputField = HStack {
-                Image("user-icon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(
-                        width: 30,
-                        height: 30.0
+            VStack{
+                
+                
+                // MARK: - nickname textfield
+                let nicknameTXF = HStack {
+                    Image("user-icon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(
+                            width: 30,
+                            height: 30.0
+                        )
+                        .opacity(0.5)
+                    
+                    let textFiel = TextField(
+                        "Nickname",
+                        text: $profile.nickname
                     )
-                    .opacity(0.5)
+                    
+                    textFiel
+                        .autocapitalization(UITextAutocapitalizationType.none)
+                }
+                    .padding(0.02 * ScreenDim.height)
                 
-                let emailTextField = TextField(
-                    "Nickname",
-                    text: $profile.nickname
-                )
+                nicknameTXF
+                    .background(
+                        RoundedRectangle(cornerRadius:10)
+                            .fill(Color(.systemGray5))
+                    )
+                    .frame(width: ScreenDim.width * 0.8)
+                    .padding(.top, 30)
                 
-                emailTextField
-    //                .keyboardType(.emailAddress)
-                    .autocapitalization(UITextAutocapitalizationType.none)
+                
+                Button{
+                    //
+                } label:{
+                    Text("update Nickname")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(
+                            LinearGradient(
+                                gradient: Gradient(colors: [.secondaryRed, .primaryBrown]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .cornerRadius(10)
+                }
+                .shadow(
+                    color: Color.secondaryBrown.opacity(0.8),
+                    radius: 5, x: 2, y: 2)
+                .padding(.top, 30)
+                
+                
+                Spacer()
             }
-                .padding(0.02 * ScreenDim.height)
-            
-            emailInputField.background(
-                RoundedRectangle(cornerRadius:10)
-                    .fill(Color(.systemGray5))
-            ).frame(width: ScreenDim.width * 0.8)
+            .navigationBarTitle(
+                "Update Nickname" ,
+                displayMode: .inline
+            )
         }
-        .navigationBarTitle("Update Nickname")
     }
 }
 

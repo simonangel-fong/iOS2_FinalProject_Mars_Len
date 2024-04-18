@@ -32,7 +32,7 @@
 
   - Based on selected date, load images
 
-- [ ] Load Image
+- [x] Load Image
   - Based on user selection, Load Images
 
 ---

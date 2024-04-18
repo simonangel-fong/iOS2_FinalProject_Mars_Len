@@ -53,20 +53,24 @@ struct ImageRow<Destination: View>: View {
                 
                 Spacer()
             }
+            .frame(maxWidth: .infinity, maxHeight: 200)
         }
     }
 }
 
 struct ContentView_ImageRow: PreviewProvider{
     static var previews: some View{
+        let phObj = photo(
+        sol: 100,
+        img_src: "http://mars.nasa.gov/mer/gallery/all/2/f/001/2F126468064EDN0000P1001R0M1-BR.JPG",
+        earth_date: "2010-10-10",
+        camera: camera(name: "FHAZ", full_name: "Front Camera"))
+        
         ImageRow(
-            photoData: photo(
-            sol: 100,
-            img_src: "http://mars.nasa.gov/mer/gallery/all/2/f/001/2F126468064EDN0000P1001R0M1-BR.JPG",
-            earth_date: "2010-10-10",
-            camera: camera(name: "FHAZ", full_name: "Front Camera")),
-            destView: PhotoView()
+            photoData:phObj ,
+            destView: PhotoView(photoData: phObj)
         )
+        
     }
 }
 

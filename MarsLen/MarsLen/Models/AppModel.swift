@@ -161,8 +161,12 @@ class AppModel: ObservableObject{
             }
             
             DispatchQueue.main.async {
-                let imgData = self.toImage(data: data)
-                completion(imgData!)
+                
+                if let imgData = self.toImage(data: data) {
+                    completion(imgData)
+                }
+//                let imgData = self.toImage(data: data)
+//                completion(imgData)
             }
         }.resume()
     }

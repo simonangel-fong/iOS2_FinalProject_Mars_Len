@@ -10,14 +10,14 @@ import SwiftUI
 struct MissionGalleryView: View {
     
     @EnvironmentObject var model: AppModel
-    @State var photoList:[photo] = []
+    @State var photoList:[photo]?
     
     @State var camIndex = 0
     @GestureState private var dragOffset: CGFloat = 0
-  
+    
     var body: some View {
         NavigationStack{
-//            Text("\(camIndex)")
+            //            Text("\(camIndex)")
             
             VStack{
                 // title
@@ -48,7 +48,7 @@ struct MissionGalleryView: View {
                                 model.camIndex = self.camIndex
                                 // call load image
                                 model.getPhotoList(camIndex:camIndex) { photoModel in
-                                    photoList = photoModel.photos!
+                                    photoList = photoModel.photos
                                 }
                             }
                         }
@@ -89,7 +89,7 @@ struct MissionGalleryView: View {
                                 model.camIndex = self.camIndex
                                 // call load image
                                 model.getPhotoList(camIndex:camIndex) { photoModel in
-                                    photoList = photoModel.photos!
+                                    photoList = photoModel.photos
                                 }
                             }
                         }
@@ -129,7 +129,7 @@ struct MissionGalleryView: View {
                                         
                                         // call load image
                                         model.getPhotoList(camIndex:camIndex) { photoModel in
-                                            photoList = photoModel.photos!
+                                            photoList = photoModel.photos
                                         }
                                     }
                                 }else if value.translation.width < -threshold {
@@ -139,7 +139,7 @@ struct MissionGalleryView: View {
                                         model.camIndex = self.camIndex
                                         // call load image
                                         model.getPhotoList(camIndex:camIndex) { photoModel in
-                                            photoList = photoModel.photos!
+                                            photoList = photoModel.photos
                                         }
                                     }
                                 }
@@ -148,37 +148,30 @@ struct MissionGalleryView: View {
                 }
                 .padding(.vertical,30)
                 
-                // photo list
-                //                ScrollView {
-                //                    LazyVStack(spacing: 10) {
-                //                        ForEach(samplePhoto, id: \.0) { itm in
-                //                            ImageRow(
-                //                                imageName: itm.1,
-                //                                date: itm.2,
-                //                                sol: itm.3,
-                //                                mission: itm.4,
-                //                                destView: PhotoView())
-                //                            .background(
-                //                                Color.secondaryWhite.opacity(0.4))
-                //                            .shadow(color: Color.primaryDark.opacity(0.2), radius: 3, x: 3, y: 3)
-                //
-                //                        }.padding(.horizontal)
-                //                    }
-                //                }
                 
-                List(photoList) { photo in
-                    HStack {
-                        ImageRow(
-                            model:model,
-                            photoData: photo,
-                            destView: PhotoView()
-                        )
+                if let phList = photoList{
+                    List(phList) { photo in
+                        HStack {
+                            ImageRow(
+                                model:model,
+                                photoData: photo,
+                                destView: PhotoView(photoData: photo)
+                            )
+                            
+                        }
                     }
+                    //                    .frame( maxWidth: .infinity)
+                    //                    .edgesIgnoringSafeArea(.all)
+                    .listStyle(PlainListStyle())
+                }else{
+                    Text("No data with this camera!")
                 }
-                .onAppear{
-                    model.getPhotoList(camIndex: camIndex) { photoModel in
-                        photoList = photoModel.photos!
-                    }
+                
+                Spacer()
+            }
+            .onAppear{
+                model.getPhotoList(camIndex: camIndex) { photoModel in
+                    photoList = photoModel.photos
                 }
             }
             .navigationBarTitle("Gallery", displayMode: .inline)
