@@ -2,8 +2,6 @@
 
 - This is a repo of the project Mars Lens, the fianl project of the iOS course.
 
-- [Project - Mars Len](#project---mars-len)
-
 ---
 
 ## Features
@@ -18,10 +16,10 @@
   - Load email from Firebase Database
   - Firebase Database
 
-<!-- - [ ] User Image
+- [x] User Image
 
   - Enable user to upadte their images
-  - Google Firebase Database -->
+  - Google Firebase Database
 
 - [x] Select Mars Rovers
 
@@ -36,3 +34,25 @@
   - Based on user selection, Load Images
 
 ---
+
+![pic](./pic/1signup.png)
+
+![pic](./pic/2login.png)
+
+![pic](./pic/3profile.png)
+
+![pic](./pic/4update_nickname.png)
+
+![pic](./pic/5missionList.png)
+
+![pic](./pic/6mission.png)
+
+![pic](./pic/7gallery.png)
+
+![pic](./pic/8photo.png)
+
+![pic](./pic/9different_devices.png)
+
+---
+
+[TOP](#project---mars-len)
