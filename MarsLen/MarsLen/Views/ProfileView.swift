@@ -6,35 +6,63 @@
 //
 
 import SwiftUI
+import FirebaseStorage
+import FirebaseDatabase
 
 // A view of profile view
 struct ProfileView: View {
-    @Environment(\.dismiss) var dismiss
+    
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var user = UserModel()
     @ObservedObject var profileModel = ProfileModel()
-    @ObservedObject var profile: ProfileObj = profileObj
+
+    @State var profile: ProfileObj = profileObj
+    @State var logoImg: UIImage?
+    
+    @State private var isAlert: Bool = false
+    @State private var alertMsg:String = ""
     
     var body: some View {
         NavigationStack{
             VStack{
-                ProfileImg(
-                    imgUrl: profile.imgurl,
-                    nickname: profile.nickname)
-            
-//                // list of profile configuration views
-//                List {
-//                    NavigationLink(destination: NicknameView()) {
-//                        HStack {
-//                            Text("Nickname")
-//                        }
-//                    }
-//                    
-//                    NavigationLink(destination: UploadImageView()) {
-//                        HStack {
-//                            Text("Update Image")
-//                        }
-//                    }
-//                }
+                
+                VStack{
+                    if let logoData = logoImg {
+                        Image(uiImage: logoData)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 150)
+                            .padding()
+                            .clipShape(Circle())
+                    }else{
+                        Image(systemName: "person.circle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, height: 100)
+                            .padding()
+                    }
+                    
+                    Text(profile.nickname)
+                        .font(.title)
+                }
+                
+                
+                // list of profile configuration views
+                List {
+                    // update nickname
+                    NavigationLink(destination: NicknameView()) {
+                        HStack {
+                            Text("Update Nickname")
+                        }
+                    }
+                    
+                    // update logo
+                    NavigationLink(destination: UploadImageView()) {
+                        HStack {
+                            Text("Update Image")
+                        }
+                    }
+                }
                 
                 Spacer()
                 
@@ -60,24 +88,55 @@ struct ProfileView: View {
             // Get profile data when appearing
             .onAppear {
                 profileModel.getProfile()
-                //            profileModel.create()
+                getLogo()
+                
             }
-            .navigationTitle("Profile")
+            .navigationTitle("Astronaut Profile")
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button(action: {
+                        logoImg = nil
                         user.logout()   // logout
-                        dismiss()       // dismiss current
+//                        isAlert.toggle()
+//                        alertMsg = "Logout success."
+                        
                     }) {
                         Label("Back", systemImage: "arrow.left.circle")
                     }
                 }
             }
+            
         }
+        .alert(isPresented: $isAlert, content: {
+                    // Alert configuration
+                    Alert(title: Text("Message"), message: Text(alertMsg), dismissButton: .destructive(Text("Ok"), action: {
+                        // Action to take when user clicks "Ok"
+                        // Pop back the view
+                        presentationMode.wrappedValue.dismiss()
+                    }))
+                })
+    }
+    
+    func getLogo(){
+        print("======== getLogo")
+        // load data from storage
+        let storageRef = Storage.storage().reference()
+        let imgRef = storageRef.child(profile.imgurl)
+        
+        print(imgRef.description)
+        
+        imgRef.getData(maxSize: 5 * 1024 * 1024, completion: { data, error in
+            
+            if error == nil && data != nil{
+                DispatchQueue.main.async {
+                    self.logoImg = UIImage(data: data!)
+                    print("get logo")
+                }
+            }
+        })
     }
 }
-
 
 
 struct ProfileView_Previews: PreviewProvider {
@@ -88,7 +147,7 @@ struct ProfileView_Previews: PreviewProvider {
     //    )
     static var previews: some View {
         //        ProfileView(profileObj: exampleProfile)
-        ProfileView()
+        ProfileView( )
         //            .environmentObject(AppModel())
     }
 }

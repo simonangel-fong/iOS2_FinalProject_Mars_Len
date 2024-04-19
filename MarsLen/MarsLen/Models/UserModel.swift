@@ -67,6 +67,8 @@ class UserModel: ObservableObject {
                 self.alert.toggle()
                 print("============Sign up fail: \(self.alertMessage)")
             } else {
+                self.alertMessage = "Sign up new Astronaut."
+                self.alert.toggle()
                 print("============Signed up")
             }
         }
@@ -80,8 +82,11 @@ class UserModel: ObservableObject {
             email = ""
             password = ""
             print("========Logout")
-        } catch {
-            print("Error signing out")
+            self.alertMessage = "See you soon, Astronaut."
+            self.alert.toggle()
+        }
+        catch let error as NSError {
+            print("Error signing out: \(error.localizedDescription)")
         }
     }
 }

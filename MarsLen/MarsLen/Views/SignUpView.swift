@@ -91,10 +91,16 @@ struct SignUpView: View {
             let signUpButton = Button(action: {
                 print("========Call sign up")
                 user.signUp()
+                Alert(
+                    title: Text("Important message"),
+                    message: Text("Wear sunscreen"),
+                    dismissButton: .default(Text("Got it!"))
+                )
                 print("========Call create profile")
                 profileModel.create()
                 print("========call login")
-                user.login()
+//                user.login()
+                dismiss()
             }) {
                 Text("Sign Up".uppercased())
                     .foregroundColor(.white)
@@ -104,12 +110,15 @@ struct SignUpView: View {
                 .background(
                     Capsule().fill(Color.primaryRed))
             
+            // signup btn
             signUpButton.buttonStyle(BorderlessButtonStyle())
+
             
             Spacer().frame(idealHeight: 0.05 * ScreenDim.height).fixedSize()
             
             HStack {
                 Text("Already have an account?")
+            
                 let loginButton = Button(action: {
                     user.isSignedIn = false
                     dismiss()
@@ -117,6 +126,7 @@ struct SignUpView: View {
                     Text("Login".uppercased()).bold()
                 }
                 
+                // login btn
                 loginButton.buttonStyle(BorderlessButtonStyle())
             }
             

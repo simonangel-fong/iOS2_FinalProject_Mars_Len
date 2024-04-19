@@ -12,6 +12,12 @@ struct NicknameView: View {
     
     @ObservedObject var profileModel = ProfileModel()
     @ObservedObject var profile: ProfileObj = profileObj
+    @StateObject var user = UserModel()
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var nickname: String = ""
+    @State private var isAlert: Bool = false
+    @State private var alertMsg:String = ""
     
     var body: some View {
         NavigationView{
@@ -31,7 +37,7 @@ struct NicknameView: View {
                     
                     let textFiel = TextField(
                         "Nickname",
-                        text: $profile.nickname
+                     text: $nickname
                     )
                     
                     textFiel
@@ -49,7 +55,16 @@ struct NicknameView: View {
                 
                 
                 Button{
-                    //
+                    let isUpdate = profileModel.updateNickname(nickname: nickname)
+                    
+                    if !isUpdate.isEmpty {
+                        isAlert.toggle()
+                        alertMsg = isUpdate
+                        
+                    }else{
+                        isAlert.toggle()
+                        alertMsg = "update success!"
+                    }
                 } label:{
                     Text("update Nickname")
                         .padding()
@@ -71,11 +86,24 @@ struct NicknameView: View {
                 
                 Spacer()
             }
-            .navigationBarTitle(
-                "Update Nickname" ,
-                displayMode: .inline
-            )
+            
+            .onAppear{
+                nickname = profile.nickname
+                print("======== Old nickname: \(nickname)")
+            }
+            .alert(isPresented: $isAlert, content: {
+                        // Alert configuration
+                        Alert(title: Text("Message"), message: Text(alertMsg), dismissButton: .destructive(Text("Ok"), action: {
+                            // Action to take when user clicks "Ok"
+                            // Pop back the view
+                            presentationMode.wrappedValue.dismiss()
+                        }))
+                    })
         }
+        .navigationBarTitle(
+            "Update Nickname" ,
+            displayMode: .inline
+        )
     }
 }
 
